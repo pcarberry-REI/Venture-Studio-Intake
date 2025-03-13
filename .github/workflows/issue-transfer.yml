@@ -13,8 +13,8 @@ jobs:
           github-token: ${{ secrets.PAT_TOKEN }}
           script: |
             await github.rest.issues.create({
-              owner: 'pcarberry-rei',
-              repo: 'https://github.com/pcarberry-REI/Venture-Studio',
+              owner: 'your-org-or-username',
+              repo: 'private-repo-name',
               title: context.payload.issue.title,
               body: `Transferred from public issue:\n\n${context.payload.issue.body}\n\n[Original issue](${context.payload.issue.html_url})`,
               labels: context.payload.issue.labels.map(label => label.name),
